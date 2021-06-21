@@ -7,11 +7,12 @@
   align-items: center;
   ul {
     list-style: none;
-    font-size: large;
+    font-size: $font-size-large;
     li {
       display: inline-block;
-      margin: 0 5px;
+      margin: 0 0.75rem;
       color: $color-light;
+
       &:hover {
         color: $color-1;
         cursor: pointer;

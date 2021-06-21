@@ -11,16 +11,18 @@ export class SpendingsComponent implements OnInit {
   x;
   y;
   public lineChartData: ChartDataSets[] = [
-    { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A' },
+    { data: [0, 600, 400, 800, 400, 600, 200, 800, 400], label: 'Spendings' },
   ];
   public lineChartLabels: Label[] = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
+    '0',
+    '0.25',
+    '0.5',
+    '0.75',
+    '1',
+    '1.25',
+    '1.5',
+    '1.75',
+    '2',
   ];
   public lineChartOptions: ChartOptions = {
     responsive: true,
@@ -28,8 +30,8 @@ export class SpendingsComponent implements OnInit {
 
   public lineChartColors: Color[] = [
     {
-      borderColor: 'black',
-      backgroundColor: 'rgba(255,0,0,0.3)',
+      borderColor: '#6b5b95',
+      backgroundColor: 'aqua',
     },
   ];
   public lineChartLegend = true;
