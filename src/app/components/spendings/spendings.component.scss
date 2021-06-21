@@ -1,0 +1,14 @@
+@import "../../../styles.scss";
+.chart-container {
+  display: flex;
+  margin: 1rem auto;
+  justify-content: center;
+  width: 45rem;
+  height: 30rem;
+
+  label {
+    color: $color-dark;
+    font-size: $font-size-large;
+    font-weight: bold;
+  }
+}

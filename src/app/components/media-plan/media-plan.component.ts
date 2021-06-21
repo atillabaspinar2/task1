@@ -5,7 +5,6 @@ type Channel = {
   name: string;
   budget?: number;
   keepConsistent?: boolean;
-  exclude?: boolean;
 };
 
 @Component({
@@ -23,23 +22,20 @@ export class MediaPlanComponent implements OnInit {
       name: 'SEA',
       budget: 0,
       keepConsistent: false,
-      exclude: false,
     },
     {
       name: 'Display',
       budget: 0,
       keepConsistent: false,
-      exclude: false,
     },
     {
       name: 'Social',
       budget: 0,
       keepConsistent: false,
-      exclude: false,
     },
   ];
 
-  total: number;
+  total: number = 0;
 
   ngOnInit(): void {
     this.mediaForm = this.fb.group({
@@ -59,9 +55,9 @@ export class MediaPlanComponent implements OnInit {
           this.total = isNaN(+val) ? 0 : +val;
           const decimalPoint = val.indexOf('.');
           if (decimalPoint !== -1) {
-            const numVal2 = val.slice(0, decimalPoint);
-            const numval3 = val.slice(decimalPoint, decimalPoint + 3);
-            budget.setValue('$'.concat(numVal2).concat(numval3), {
+            const beforeDecimal = val.slice(0, decimalPoint);
+            const afterDecimal = val.slice(decimalPoint, decimalPoint + 3);
+            budget.setValue('$'.concat(beforeDecimal).concat(afterDecimal), {
               onlySelf: true,
               emitValue: false,
             });
@@ -107,9 +103,9 @@ export class MediaPlanComponent implements OnInit {
     );
   }
 
-  getExclude(index: number) {
+  getKeepConsistent(index: number) {
     return (this.mediaForm.get('channels') as FormArray).controls[index].get(
-      'exclude'
+      'keepConsistent'
     );
   }
 }

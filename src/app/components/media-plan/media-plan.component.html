@@ -24,8 +24,8 @@
         <ng-container [formGroupName]="i">
           <div>{{channel.name}}</div>
           <div><input type="text" formControlName="budget"></div>
-          <div><input type="radio" [value]="getExclude(i)" formControlName="keepConsistent"></div>
-          <div><input type="radio" [value]="!getExclude(i)" formControlName="keepConsistent"></div>
+          <div><input type="radio" [value]="getKeepConsistent(i)" formControlName="keepConsistent"></div>
+          <div><input type="radio" [value]="!getKeepConsistent(i)" formControlName="keepConsistent"></div>
         </ng-container>
       </ng-container>
       <div></div>

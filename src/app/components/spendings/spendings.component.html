@@ -1,1 +1,16 @@
-<p>spendings works!</p>
+<div class="chart-container">
+  <canvas baseChart width="400" height="400" [datasets]="lineChartData" [labels]="lineChartLabels"
+    [options]="lineChartOptions" [colors]="lineChartColors" [chartType]="lineChartType" [plugins]="lineChartPlugins"
+    (chartClick)="chartClicked($event)">
+  </canvas>
+
+  <div class="chart-results">
+    <div><label> Coordinates</label></div>
+    <div>
+      <label>X: </label> <label>{{x}}</label>
+    </div>
+    <div>
+      <label>Y: </label><label>{{y}}</label>
+    </div>
+  </div>
+</div>
