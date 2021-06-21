@@ -1,27 +1,16 @@
-# Adtriba
+## Running the app
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.5.
+1. unzip to a folder
+2. navigate to the folder
+3. run "npm i"
+4. run "ng serve --port 3000" (or your favorite port)
+5. in browser navigate "http://localhost:3000"
 
-## Development server
+## Remarks:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. The app has a header with two links each task.
+2. It also has routing. when a route is not found, it navigates to main page (the first page)
+3. I did not use any css framework, it is based mainly on flexbox and css grid. it has some responsive design too.
+4. For implementation of the currency I used code to add "$" sign and observed the fractions so that it can at most have 2 decimal digits.
+5. There are common styles in styles.scss file. "Google Open Sans" fonts are embedded in the assets.
+6. For the chart, I used ng2-charts that is based on Chart.js. (actually this is the first time i used it)
