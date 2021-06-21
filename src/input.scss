@@ -1,0 +1,51 @@
+.input-helper {
+  position: relative;
+  display: inline-block;
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+  }
+}
+
+.input-helper--radio {
+  padding-left: 18px;
+
+  &:before {
+    top: 1px;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid #222;
+  }
+}
+
+.input-helper--checkbox {
+  padding-left: 20px;
+
+  &:before {
+    top: 0;
+    left: 0;
+    width: 13px;
+    height: 13px;
+    border: 1px solid #222;
+  }
+}
+
+input[type="radio"] {
+  display: none;
+
+  &:checked + label:before {
+    background: #222;
+  }
+}
+
+input[type="checkbox"] {
+  display: none;
+
+  &:checked + label:before {
+    background: #222;
+  }
+}

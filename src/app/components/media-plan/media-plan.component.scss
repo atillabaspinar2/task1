@@ -1,0 +1,73 @@
+@import "../../../styles.scss";
+.media-plan-content {
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: $margin-large;
+  width: 45rem;
+
+  label {
+    color: $color-dark;
+    font-size: $font-size-large;
+    font-weight: bold;
+  }
+
+  input {
+    font-size: $font-size-medium;
+    background-color: $color-light;
+    border-radius: 0.2rem;
+    border-color: $color-light;
+    border-style: none;
+    padding: $padding-1;
+  }
+
+  .name {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .dates {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+    > div {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      @media screen and (max-width: 992px) {
+        width: auto;
+      }
+    }
+  }
+
+  .channels {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr;
+    gap: 10px 5px;
+    align-items: center;
+    .table-header {
+      font-weight: bold;
+    }
+    input[type="text"] {
+      width: 80%;
+    }
+  }
+
+  .actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    button {
+      font-size: $font-size-large;
+      font-weight: bold;
+      padding: 0.6rem;
+      border: none;
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    width: 100%;
+  }
+}

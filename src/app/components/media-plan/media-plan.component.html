@@ -1,0 +1,41 @@
+<div>
+
+  <form class="media-plan-content" [formGroup]="mediaForm">
+    <div class="name">
+      <label for="name">Media Plan</label>
+      <input type="text" id="name" formControlName="name">
+    </div>
+    <div class="dates">
+      <div>
+        <label for="start-date">Start date</label>
+        <input type="date" id="start-date" formControlName="startDate">
+      </div>
+      <div>
+        <label for="end-date">End date</label>
+        <input type="date" id="end-date" formControlName="endDate">
+      </div>
+    </div>
+    <div class="channels" formArrayName="channels">
+      <div class="table-header">Channel</div>
+      <div class="table-header">Budget</div>
+      <div class="table-header">Keep consistent</div>
+      <div class="table-header">Exclude</div>
+      <ng-container *ngFor="let channel of channels; let i=index">
+        <ng-container [formGroupName]="i">
+          <div>{{channel.name}}</div>
+          <div><input type="text" formControlName="budget"></div>
+          <div><input type="radio" [value]="getExclude(i)" formControlName="keepConsistent"></div>
+          <div><input type="radio" [value]="!getExclude(i)" formControlName="keepConsistent"></div>
+        </ng-container>
+      </ng-container>
+      <div></div>
+    </div>
+    <div>
+      <label for="">Total: {{total | currency}}</label>
+    </div>
+    <div class="actions">
+      <button>Copy Plan</button>
+      <button> Save Plan</button>
+    </div>
+  </form>
+</div>
